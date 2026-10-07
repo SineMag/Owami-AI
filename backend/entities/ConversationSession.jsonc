@@ -1,0 +1,40 @@
+{
+  "name": "ConversationSession",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "ended"
+      ],
+      "default": "active"
+    },
+    "current_recipe_id": {
+      "type": "string"
+    },
+    "current_step": {
+      "type": "number"
+    },
+    "total_steps": {
+      "type": "number"
+    },
+    "servings": {
+      "type": "number"
+    },
+    "context": {
+      "type": "object"
+    }
+  },
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
